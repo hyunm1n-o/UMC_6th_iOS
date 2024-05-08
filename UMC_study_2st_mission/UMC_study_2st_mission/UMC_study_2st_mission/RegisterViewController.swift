@@ -9,9 +9,17 @@ import UIKit
 
 class RegisterViewController: UIViewController {
     
+    @IBOutlet weak var popToLoginButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
     
     //MARK: - Properties
+    var email: String = ""
+    var name: String = ""
+    var nickname: String = ""
+    var password: String = ""
+    
+    var userInfo: ((UserInfo) -> Void)?
+
     var isValidEmail = false {
         didSet {
             self.validateUserInfo()
@@ -53,6 +61,9 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextField()
+        setupAttribute()
+        
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
     //MARK: - Actions
     @objc func textFieldEditingChanged(_ sender: UITextField){
@@ -61,19 +72,38 @@ class RegisterViewController: UIViewController {
         switch sender {
         case emailTextField:
             self.isValidEmail = text.isValidEmail()
-            
+            self.email = text
+           
         case nameTextField:
             self.isValidName = text.count > 2
+            self.name = text
             
         case nicknameTextField:
             self.isValidNickname = text.count > 2
+            self.nickname = text
             
         case passwordTextField:
             self.isValidPassword = text.isVaildPassword()
+            self.password = text
+            
         default:
             fatalError("Missing TextField...")
         }
     }
+    
+    @IBAction func backButtonDidTap(_ sender: UIBarButtonItem) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func registerButtonDidTap(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+        
+        let userInfo = UserInfo(email: self.email, name: self.name, nickname: self.nickname, password: self.password)
+        
+        self.userInfo?(userInfo)
+        print(userInfo)
+    }
+    
     
     
     //MARK: - Helpers
@@ -101,6 +131,22 @@ class RegisterViewController: UIViewController {
             }
           
         }
+    }
+    
+    private func setupAttribute() {
+        
+        let text1 = "계정이 있으신가요?"
+        let text2 = "로그인"
+        
+        let font1 = UIFont.systemFont(ofSize: 13)
+        let font2 = UIFont.boldSystemFont(ofSize: 13)
+        
+        let color1 = UIColor.darkGray
+        let color2 = UIColor.facebook
+        
+        let attributes = generateButtonAttribute(self.popToLoginButton, texts: text1, text2, fonts: font1, font2, colors: color1, color2)
+        
+        self.popToLoginButton.setAttributedTitle(attributes, for: .normal)
     }
 }
 
