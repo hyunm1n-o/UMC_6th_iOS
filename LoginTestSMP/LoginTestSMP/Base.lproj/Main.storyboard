@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="LoginTestSMP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uuP-4b-x1H">
+                                <rect key="frame" x="34.666666666666657" y="502" width="324" height="59"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="login"/>
+                                <connections>
+                                    <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RSJ-S0-Utz"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="nu4-3Y-tX3">
+                                <rect key="frame" x="146.66666666666666" y="251.33333333333334" width="100" height="97.333333333333286"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="0dL-qb-wx5"/>
+                                    <constraint firstAttribute="height" constant="100" id="qLy-Oi-xkT"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="____" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nM0-tM-bCn">
+                                <rect key="frame" x="46.666666666666657" y="390.66666666666669" width="300" height="25.333333333333314"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="qyM-E4-I8j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="1" green="0.99906022380000004" blue="0.88432903500000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="nu4-3Y-tX3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Go6-pO-Hgd"/>
+                            <constraint firstItem="uuP-4b-x1H" firstAttribute="top" secondItem="nM0-tM-bCn" secondAttribute="bottom" constant="86" id="NkO-BE-6G3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uuP-4b-x1H" secondAttribute="bottom" constant="257" id="b8D-Pq-FkI"/>
+                            <constraint firstItem="uuP-4b-x1H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lw6-kw-Hb4"/>
+                            <constraint firstItem="nM0-tM-bCn" firstAttribute="top" secondItem="nu4-3Y-tX3" secondAttribute="bottom" constant="40.670000000000002" id="sJZ-Bm-mU3"/>
+                            <constraint firstItem="nM0-tM-bCn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zlz-wU-AsP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="uuP-4b-x1H" id="Plh-8B-VEI"/>
+                        <outlet property="nicknameLabel" destination="nM0-tM-bCn" id="ua0-vs-vaG"/>
+                        <outlet property="profileImageView" destination="nu4-3Y-tX3" id="yUw-4e-hfH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="-27"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="login" width="300" height="45"/>
+        <image name="person" catalog="system" width="128" height="121"/>
+    </resources>
+</document>
