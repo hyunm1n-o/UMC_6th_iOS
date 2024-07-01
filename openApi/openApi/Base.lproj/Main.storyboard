@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="openApi" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지금 이곳의 날씨는?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RFR-HB-KZ7">
+                                <rect key="frame" x="98" y="159" width="197" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내위치" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNc-w1-T1u">
+                                <rect key="frame" x="96.666666666666686" y="459" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="RuC-kT-eGx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="n5t-A8-pqA">
+                                <rect key="frame" x="96.666666666666686" y="230.33333333333337" width="200" height="197.66666666666663"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="ZHo-ms-zvq"/>
+                                    <constraint firstAttribute="width" constant="200" id="t9p-ef-oEW"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_℃" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mad-vy-UEG">
+                                <rect key="frame" x="46.666666666666657" y="497" width="300" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="f7I-82-lDx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="55"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="n5t-A8-pqA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Nv-hQ-m9L"/>
+                            <constraint firstItem="dNc-w1-T1u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="I91-Hj-jaO"/>
+                            <constraint firstItem="RFR-HB-KZ7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UUl-ew-pn4"/>
+                            <constraint firstItem="Mad-vy-UEG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UkO-0M-Mxt"/>
+                            <constraint firstItem="n5t-A8-pqA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZBY-6P-dNx"/>
+                            <constraint firstItem="dNc-w1-T1u" firstAttribute="top" secondItem="n5t-A8-pqA" secondAttribute="bottom" constant="30" id="b1C-Xe-RVa"/>
+                            <constraint firstItem="RFR-HB-KZ7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="dMI-4E-iUU"/>
+                            <constraint firstItem="n5t-A8-pqA" firstAttribute="top" secondItem="RFR-HB-KZ7" secondAttribute="bottom" constant="40" id="eEB-kB-yef"/>
+                            <constraint firstItem="Mad-vy-UEG" firstAttribute="top" secondItem="dNc-w1-T1u" secondAttribute="bottom" constant="8" symbolic="YES" id="hNt-u0-hW5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="locationLabel" destination="dNc-w1-T1u" id="YYf-q8-dW4"/>
+                        <outlet property="tempLabel" destination="Mad-vy-UEG" id="j9O-M0-LrR"/>
+                        <outlet property="weatherImageView" destination="n5t-A8-pqA" id="QTv-go-8Sd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="questionmark" catalog="system" width="94" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
